@@ -1,0 +1,29 @@
+---
+- name: "Provisioning Ubuntu host"
+  hosts: localhost
+  roles:
+    - icamys.guake3_terminal
+  tasks:
+    - name: Installing basic packages
+      become: yes
+      apt:
+        update_cache: True
+        name: [
+          'git',
+          'htop',
+          'vim',
+          'python3-pip',
+          'wget',
+          'keepass2',
+        ]
+        state: present
+
+    - name: Installing Google Chrome
+      become: yes
+      apt:
+        deb: https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+
+    - name: Installing Dropbox
+      become: yes
+      apt:
+        deb: https://www.dropbox.com/download?dl=packages/ubuntu/dropbox_2020.03.04_amd64.deb
