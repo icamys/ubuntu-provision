@@ -18,6 +18,9 @@ Use this playbook to provision your local Ubuntu host with:
 # 1. Install ansible
 $ sudo ./install-ansible.sh
 
-# 2. Run ansible playbook
+# 2. Install required roles by playbook
+$ ansible-galaxy install -r requirements.yml
+
+# 3. Run the ansible playbook
 $ ansible-playbook playbook.yml
 ```
