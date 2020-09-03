@@ -27,3 +27,9 @@
       become: yes
       apt:
         deb: https://www.dropbox.com/download?dl=packages/ubuntu/dropbox_2020.03.04_amd64.deb
+
+    - name: Installing Joplin
+      shell: wget -O - https://raw.githubusercontent.com/laurent22/joplin/master/Joplin_install_and_update.sh | bash
+
+    - name: Disabling screen rotation
+      shell: gsettings set org.gnome.settings-daemon.plugins.orientation active false
