@@ -15,6 +15,7 @@
           'python3-pip',
           'wget',
           'keepass2',
+          'flameshot',
         ]
         state: present
 
